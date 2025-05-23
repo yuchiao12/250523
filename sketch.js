@@ -127,5 +127,37 @@ function draw() {
         line(x1, y1, x2, y2);
       }
     }
+
+    // 新增右眼指定列陣資料畫線
+    const rightEyeIndices = [
+      359,467,260,259,257,258,286,414,463,341,256,252,253,254,339,255
+    ];
+    stroke(255, 0, 255); // 紫色
+    strokeWeight(10);
+    for (let i = 0; i < rightEyeIndices.length - 1; i++) {
+      const idxA = rightEyeIndices[i];
+      const idxB = rightEyeIndices[i + 1];
+      if (keypoints[idxA] && keypoints[idxB]) {
+        const [x1, y1] = keypoints[idxA];
+        const [x2, y2] = keypoints[idxB];
+        line(x1, y1, x2, y2);
+      }
+    }
+
+    // 新增右眼第二串指定列陣資料畫線
+    const rightEyeIndices2 = [
+      263,466,388,387,386,385,384,398,362,382,381,380,374,373,390,249
+    ];
+    stroke(0, 128, 255); // 藍紫色
+    strokeWeight(10);
+    for (let i = 0; i < rightEyeIndices2.length - 1; i++) {
+      const idxA = rightEyeIndices2[i];
+      const idxB = rightEyeIndices2[i + 1];
+      if (keypoints[idxA] && keypoints[idxB]) {
+        const [x1, y1] = keypoints[idxA];
+        const [x2, y2] = keypoints[idxB];
+        line(x1, y1, x2, y2);
+      }
+    }
   }
 }
